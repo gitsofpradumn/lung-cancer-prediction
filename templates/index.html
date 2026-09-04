@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LungGuard | Lung Cancer Risk Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">🫁 LUNG HEALTH AWARENESS</p>
+
+            <h1>Understand Your<br><span>Lung Health</span></h1>
+
+            <p class="hero-text">
+                Learn about the effects of smoking and alcohol,
+                then use our machine-learning model to explore
+                your predicted lung cancer risk.
+            </p>
+
+            <a href="#awareness" class="hero-button">
+                Explore Your Risk ↓
+            </a>
+        </div>
+
+        <div class="hero-visual">
+            <div class="lung-glow"></div>
+            <div class="lung-icon">🫁</div>
+            <div class="floating-card card-one">🚭 Protect your lungs</div>
+            <div class="floating-card card-two">❤️ Know your risk</div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <span>↓</span>
+        </div>
+    </section>
+
+
+    <section id="awareness" class="awareness-section">
+
+        <div class="section-heading">
+            <p class="section-tag">AWARENESS FIRST</p>
+            <h2>Your health starts with awareness.</h2>
+            <p>Understanding the effects of smoking, alcohol, and cannabis can help you make more informed choices about your health.</p>
+        </div>
+
+        <div class="awareness-list">
+
+            <div class="awareness-card">
+                <div class="awareness-icon">🚬</div>
+
+                <div class="awareness-content">
+                    <p class="card-label">SMOKING</p>
+                    <h3>Every cigarette matters.</h3>
+                    <p>
+                     Smoking exposes the lungs to harmful chemicals and can damage lung tissue over time.
+                     Long-term and heavier smoking can have a greater impact on lung health.
+                     <span class="personal-line">😎 But I love to smoke (Pradumn Dubey) 🚬</span>
+                      </p>
+                </div>
+            </div>
+
+            <div class="awareness-card">
+                <div class="awareness-icon">🍺</div>
+
+                <div class="awareness-content">
+                    <p class="card-label">ALCOHOL</p>
+                    <h3>Your choices affect your health.</h3>
+                    <p>
+                       Heavy alcohol consumption can affect overall health and may contribute to conditions and behaviors that influence respiratory health.
+                      Moderation can support better long-term health.
+                       <span class="personal-line">🥃 Mujhe peene ka shauk nahi, peeta hoon gham bhulane ko 🍻</span>
+                     </p>
+                </div>
+            </div>
+
+            <div class="awareness-card">
+                <div class="awareness-icon">🌿</div>
+
+                <div class="awareness-content">
+                    <p class="card-label">CANNABIS</p>
+                    <h3>Smoke is still smoke.</h3>
+                    <p>
+                    Inhaling cannabis smoke exposes the lungs to irritants and combustion products.
+                     Regular smoking can contribute to coughing and respiratory irritation.
+                     <span class="personal-line">😅 This I don't like — tried once or twice, but it wasn't fascinating 🌿</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="prediction-preview">
+
+        <div class="section-heading">
+            <p class="section-tag">COMING NEXT</p>
+            <h2>Ready to understand your risk?</h2>
+
+            <p>
+                Continue scrolling to provide your information
+                and receive a machine-learning prediction.
+            </p>
+        </div>
+
+        <a href="#prediction" class="hero-button">
+            Check My Risk ↓
+        </a>
+
+    </section>
+
+
+    <section id="prediction" class="prediction-section">
+
+        <div class="assessment-header">
+
+            <p class="section-tag">PERSONAL HEALTH ASSESSMENT</p>
+
+            <h2>Let's understand your lung health.</h2>
+
+            <p>Your information will be analyzed by our machine-learning model.</p>
+
+            <div class="name-field">
+                <label for="user_name">What should we call you?</label>
+
+                <input type="text" id="user_name" name="user_name" placeholder="Enter your name" required>
+            </div>
+
+        </div>
+
+
+        <div class="section-heading">
+
+            <p class="section-tag">RISK PREDICTION</p>
+
+            <h2>Check Your Lung Cancer Risk</h2>
+
+            <p>
+                Enter your information below to receive a
+                model-predicted risk score.
+            </p>
+
+        </div>
+
+
+        <form id="predictionForm">
+
+
+            <!-- Personal Information -->
+
+            <div class="section">
+
+                <h2>Personal Information</h2>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="1" max="120" placeholder="Enter your age" required>
+                        <small class="field-help">Enter your age in years.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="gender">Gender</label>
+
+                        <select id="gender" name="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="0">Female</option>
+                            <option value="1">Male</option>
+                        </select>
+
+                        <small class="field-help">Select the option that matches your profile.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="education_years">Education Years</label>
+
+                        <input type="number" id="education_years" name="education_years" min="0" max="30" placeholder="Example: 15" required>
+
+                        <small class="field-help">Total number of years of formal education.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="income_level">Income Level</label>
+
+                        <select id="income_level" name="income_level" required>
+                            <option value="">Select level</option>
+                            <option value="1">1 — Lowest</option>
+                            <option value="2">2 — Low</option>
+                            <option value="3">3 — Moderate</option>
+                            <option value="4">4 — High</option>
+                            <option value="5">5 — Highest</option>
+                        </select>
+
+                        <small class="field-help">Use the 1–5 level used by the model, not your salary amount.</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Smoking & Exposure -->
+
+            <div class="section">
+
+                <h2>Smoking & Exposure</h2>
+
+                <div class="form-grid">
+
+
+                    <div class="field">
+                        <label for="smoker">Smoker</label>
+
+                        <select id="smoker" name="smoker" required>
+                            <option value="">Select option</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+
+                        <small class="field-help">Select Yes if you currently smoke or have a smoking history represented by the dataset.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="smoking_years">Smoking Years</label>
+
+                        <input type="number" id="smoking_years" name="smoking_years" min="0" max="100" placeholder="Example: 10" required>
+
+                        <small class="field-help">Approximate number of years you have smoked.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="cigarettes_per_day">Cigarettes Per Day</label>
+
+                        <input type="number" id="cigarettes_per_day" name="cigarettes_per_day" min="0" max="100" placeholder="Example: 20" required>
+
+                        <small class="field-help">Average number of cigarettes smoked per day.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="pack_years">Pack Years</label>
+
+                        <input type="number" id="pack_years" name="pack_years" readonly required>
+
+                        <small class="field-help">Calculated automatically: cigarettes per day × smoking years ÷ 20.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="passive_smoking">Passive Smoking</label>
+
+                        <select id="passive_smoking" name="passive_smoking" required>
+                            <option value="">Select option</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+
+                        <small class="field-help">Select Yes if you are regularly exposed to other people's cigarette smoke.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="air_pollution_index">Air Pollution Index</label>
+
+                        <input type="number" id="air_pollution_index" name="air_pollution_index" min="0" placeholder="Example: 70" required>
+
+                        <small class="field-help">Enter the air pollution index value available for your location.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="occupational_exposure">Occupational Exposure</label>
+
+                        <select id="occupational_exposure" name="occupational_exposure" required>
+                            <option value="">Select option</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+
+                        <small class="field-help">Exposure to workplace dust, chemicals, fumes, or other harmful substances.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="radon_exposure">Radon Exposure</label>
+
+                        <select id="radon_exposure" name="radon_exposure" required>
+                            <option value="">Select option</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+
+                        <small class="field-help">Select Yes if known to have significant radon exposure.</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Medical History -->
+
+            <div class="section">
+
+                <h2>Medical History</h2>
+
+                <div class="form-grid">
+
+
+                    <div class="field">
+                        <label for="family_history_cancer">Family History of Cancer</label>
+
+                        <select id="family_history_cancer" name="family_history_cancer" required>
+                            <option value="">Select option</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+
+                        <small class="field-help">Select Yes if cancer has occurred in your family.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="copd">COPD</label>
+
+                        <select id="copd" name="copd" required>
+                            <option value="">Select option</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+
+                        <small class="field-help">Select Yes if you have been diagnosed with COPD.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="asthma">Asthma</label>
+
+                        <select id="asthma" name="asthma" required>
+                            <option value="">Select option</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+
+                        <small class="field-help">Select Yes if you have asthma.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="previous_tb">Previous TB</label>
+
+                        <select id="previous_tb" name="previous_tb" required>
+                            <option value="">Select option</option>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+
+                        <small class="field-help">Select Yes if you have had tuberculosis in the past.</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Lifestyle -->
+
+            <div class="section">
+
+                <h2>Lifestyle</h2>
+
+                <div class="form-grid">
+
+
+                    <div class="field">
+                        <label for="bmi">BMI</label>
+
+                        <input type="number" id="bmi" name="bmi" min="10" max="80" step="0.1" placeholder="Example: 24" required>
+
+                        <small class="field-help">Body Mass Index (BMI).</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="exercise_hours_per_week">Exercise Hours / Week</label>
+
+                        <input type="number" id="exercise_hours_per_week" name="exercise_hours_per_week" min="0" max="100" step="0.5" placeholder="Example: 3" required>
+
+                        <small class="field-help">Average number of hours spent exercising per week.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="diet_quality">Diet Quality</label>
+
+                        <select id="diet_quality" name="diet_quality" required>
+                            <option value="">Select quality</option>
+                            <option value="1">1 — Poor</option>
+                            <option value="2">2 — Below average</option>
+                            <option value="3">3 — Average</option>
+                            <option value="4">4 — Good</option>
+                            <option value="5">5 — Excellent</option>
+                        </select>
+
+                        <small class="field-help">Rate your overall diet from 1 (poor) to 5 (excellent).</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="alcohol_units_per_week">Alcohol Units / Week</label>
+
+                        <input type="number" id="alcohol_units_per_week" name="alcohol_units_per_week" min="0" max="200" step="1" placeholder="Example: 5" required>
+
+                        <small class="field-help">Approximate alcohol units consumed per week.</small>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="healthcare_access">Healthcare Access</label>
+
+                        <select id="healthcare_access" name="healthcare_access" required>
+                            <option value="">Select level</option>
+                            <option value="1">1 — Poor</option>
+                            <option value="2">2 — Limited</option>
+                            <option value="3">3 — Moderate</option>
+                            <option value="4">4 — Good</option>
+                            <option value="5">5 — Excellent</option>
+                        </select>
+
+                        <small class="field-help">Rate your access to healthcare from 1 (poor) to 5 (excellent).</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" id="predictButton">
+                Predict My Risk
+            </button>
+
+            <div id="result" class="result-card"></div>
+
+        </form>
+
+    </section>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

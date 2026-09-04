@@ -1,0 +1,697 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07111f;
+    color: #ffffff;
+}
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 9%;
+    overflow: hidden;
+    background: radial-gradient(circle at 75% 45%, #123c55 0%, #07111f 42%, #040a12 100%);
+}
+
+.hero-content {
+    max-width: 620px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag,
+.section-tag {
+    color: #53d8c7;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #53d8c7;
+}
+
+.hero-text {
+    max-width: 560px;
+    color: #b8c7d9;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 50px;
+    background: #53d8c7;
+    color: #041019;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(83, 216, 199, 0.25);
+}
+
+.hero-visual {
+    width: 420px;
+    height: 420px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lung-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(83, 216, 199, 0.12);
+    box-shadow: 0 0 100px rgba(83, 216, 199, 0.25);
+    animation: pulse 3s infinite;
+}
+
+.lung-icon {
+    position: relative;
+    z-index: 2;
+    font-size: 190px;
+    filter: drop-shadow(0 0 25px rgba(83, 216, 199, 0.3));
+    animation: float 4s ease-in-out infinite;
+}
+
+.floating-card {
+    position: absolute;
+    padding: 12px 18px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    color: #dce8f3;
+    font-size: 14px;
+}
+
+.card-one {
+    top: 65px;
+    left: 0;
+}
+
+.card-two {
+    right: 0;
+    bottom: 70px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    color: #71859b;
+    font-size: 12px;
+}
+
+.awareness-section,
+
+/*edited*/
+.prediction-preview {
+    padding: 120px 9%;
+    background: #f4f8fb;
+    color: #132033;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading .section-tag {
+    color: #129f91;
+}
+
+.section-heading h2 {
+    font-size: clamp(34px, 4vw, 54px);
+    margin-bottom: 18px;
+}
+
+.section-heading > p:last-child {
+    color: #667589;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.awareness-card {
+    max-width: 850px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 35px;
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 15px 50px rgba(20, 40, 60, 0.08);
+}
+
+.awareness-icon {
+    min-width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background: #e7f8f5;
+    font-size: 40px;
+}
+
+.card-label {
+    color: #129f91;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.awareness-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.awareness-card p:last-child {
+    color: #667589;
+    line-height: 1.6;
+}
+
+.prediction-preview {
+    text-align: center;
+    background: #07111f;
+    color: #ffffff;
+}
+
+.prediction-section {
+    padding: 120px 9%;
+    background: #07111f;
+}
+
+.prediction-section .section-heading h2 {
+    color: white;
+}
+
+.prediction-section .section-heading > p:last-child {
+    color: #9aabba;
+}
+
+form {
+    max-width: 1000px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 24px;
+    background: #0d1c2c;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #b7c5d4;
+    font-size: 14px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #263b50;
+    border-radius: 10px;
+    background: #081522;
+    color: white;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #53d8c7;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #53d8c7;
+    color: #041019;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(83, 216, 199, 0.2);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#result {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero {
+        padding: 70px 7%;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-visual {
+        width: 300px;
+        height: 300px;
+        margin-top: 40px;
+    }
+
+    .lung-icon {
+        font-size: 130px;
+    }
+
+    .lung-glow {
+        width: 230px;
+        height: 230px;
+    }
+
+    .floating-card {
+        font-size: 12px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .awareness-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/*edited section*/
+/* Dark awareness section */
+.awareness-section {
+    background: #07111f;
+    color: #ffffff;
+}
+
+.awareness-section .section-heading h2 {
+    color: #ffffff;
+}
+
+.awareness-section .section-heading > p:last-child {
+    color: #9aabba;
+}
+
+.awareness-section .section-tag {
+    color: #53d8c7;
+}
+
+.awareness-card {
+    background: #0d1c2c;
+    border: 1px solid rgba(83, 216, 199, 0.15);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+.awareness-card h3 {
+    color: #ffffff;
+}
+
+.awareness-card p:last-child {
+    color: #9aabba;
+}
+
+.awareness-icon {
+    background: rgba(83, 216, 199, 0.1);
+}
+
+
+/* Personal Health Assessment */
+.assessment-header {
+    max-width: 850px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.assessment-header .section-tag {
+    color: #53d8c7;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.assessment-header h2 {
+    color: #ffffff;
+    font-size: clamp(32px, 4vw, 50px);
+    margin-bottom: 15px;
+}
+
+.assessment-header > p:not(.section-tag) {
+    color: #9aabba;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.name-field {
+    max-width: 500px;
+    margin: 35px auto 0;
+    text-align: left;
+}
+
+.name-field label {
+    display: block;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.name-field input {
+    width: 100%;
+    padding: 15px 17px;
+    border: 1px solid #294257;
+    border-radius: 12px;
+    background: #081522;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.name-field input::placeholder {
+    color: #71859b;
+}
+
+.name-field input:focus {
+    outline: none;
+    border-color: #53d8c7;
+    box-shadow: 0 0 0 3px rgba(83, 216, 199, 0.1);
+}
+
+.prediction-preview .section-heading h2 {
+    color: #ffffff;
+}
+
+.prediction-preview .section-heading > p:last-child {
+    color: #9aabba;
+}
+
+
+/* Three-column awareness section */
+
+/* Awareness cards - one after another */
+
+.awareness-list {
+    max-width: 1100px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.awareness-card {
+    width: 100%;
+    min-height: 240px;
+    padding: 35px 40px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    background: #0d1c2c;
+    border: 1px solid rgba(83, 216, 199, 0.15);
+    border-radius: 22px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.awareness-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(83, 216, 199, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.awareness-icon {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: rgba(83, 216, 199, 0.1);
+    font-size: 36px;
+}
+
+.awareness-content {
+    flex: 1;
+}
+
+.awareness-card .card-label {
+    color: #53d8c7;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.awareness-card h3 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.awareness-card .awareness-content > p:last-child {
+    color: #9aabba;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 850px;
+}
+
+@media (max-width: 700px) {
+    .awareness-card {
+        padding: 30px 25px;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .awareness-icon {
+        min-width: 65px;
+        width: 65px;
+        height: 65px;
+        font-size: 28px;
+    }
+
+    .awareness-card h3 {
+        font-size: 23px;
+    }
+}
+
+
+/* Awareness card animation */
+
+.awareness-card {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.awareness-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*user easy display in prediction section */
+
+.field-help {
+    display: block;
+    margin-top: 8px;
+    color: #71859b;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.field-help::before {
+    content: "ⓘ ";
+    color: #53d8c7;
+}
+
+.field input[readonly] {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Prediction Result */
+
+.result-card {
+    display: none;
+    max-width: 700px;
+    margin: 45px auto 0;
+    padding: 40px;
+    text-align: center;
+    background: #0d1c2c;
+    border: 1px solid rgba(83, 216, 199, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: resultReveal 0.7s ease forwards;
+}
+
+.result-card.show {
+    display: block;
+}
+
+.result-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.result-greeting {
+    color: #9aabba;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.result-title {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.risk-score {
+    font-size: 64px;
+    font-weight: 800;
+    color: #53d8c7;
+    margin-bottom: 10px;
+}
+
+.risk-label {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.risk-message {
+    color: #9aabba;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.risk-disclaimer {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #71859b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+@keyframes resultReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .result-card {
+        padding: 30px 20px;
+    }
+
+    .risk-score {
+        font-size: 50px;
+    }
+
+    .result-title {
+        font-size: 26px;
+    }
+}
+
+.personal-line {
+    font-weight: 600;
+}
